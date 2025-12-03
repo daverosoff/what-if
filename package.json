@@ -1,7 +1,7 @@
-
 {
   "name": "what-if-grade-calculator",
   "version": "1.0.0",
+  "homepage": "https://daverosoff.github.io/what-if",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
@@ -10,6 +10,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

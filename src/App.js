@@ -31,13 +31,15 @@ function App() {
       }
     });
 
+    // fixed order: from highest to lowest
+    const orderedGrades = ["A", "B+", "B", "B-", "C+", "C", "C-", "D"]
     let grade = "F";
-    for (const g of Object.keys(thresholds)) {
+    for (const g of orderedGrades) {
       const req = thresholds[g];
-      if (bins[90] >= req[90] && bins[80] >= req[80] && bins[70] >= req[70]) {
-        grade = g;
-        break;
-      }
+        if (bins[90] >= req[90] && bins[80] >= req[80] && bins[70] >= req[70]) {
+          grade = g;
+          break;
+        }
     }
 
     setResult({grade, bins});
